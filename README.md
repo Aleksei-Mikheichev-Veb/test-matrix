@@ -18,6 +18,12 @@ npm start
 
 Приложение будет доступно по адресу [http://localhost:3000](http://localhost:3000)
 
+## Используемые библиотеки
+uuid
+classnames
+reduxjs/toolkit
+react-redux
+sass
 
 ## Структура проекта
 
