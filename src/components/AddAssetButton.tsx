@@ -1,17 +1,17 @@
 import React from "react";
-import styles from "../styles/modal.module.scss";
+import styles from "../styles/assetInput.module.scss";
 import { openModal} from "../store/portfolioSlice";
 import {useDispatch} from "react-redux";
-
+import classNames from 'classnames';
 
 const AddAssetButton = () => {
     const dispatch = useDispatch();
     return (
-        <div>
-            <button className={styles.addButton} onClick={() => dispatch(openModal())}>
+        <>
+            <button className={classNames(styles.addButton, styles.button)} onClick={() => dispatch(openModal())}>
                 Добавить
             </button>
-        </div>
+        </>
     );
 };
 

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import styles from "../styles/modal.module.scss";
+import styles from "../styles/assetInput.module.scss";
 import {useDispatch} from "react-redux";
 import {addAsset, closeModal} from "../store/portfolioSlice";
 import {Asset} from "../types/asset";
 import { v4 as uuidv4 } from 'uuid';
+import classNames from "classnames";
 
 interface Props {
     asset: Asset| undefined;
@@ -21,15 +22,20 @@ const AssetInput: React.FC<Props> = ({ asset }) => {
     };
 
     return (
-        <div>
-            <input
-                type="number"
-                value={quantity}
-                onChange={(e) => setQuantity(e.target.value)}
-                className={styles.input}
-            />
-            <button onClick={() => handleSelect()}>Добавить актив</button>
-            <button onClick={() => closeModal()}>Сбросить</button>
+        <div className={styles.container}>
+            <label className={styles.label}>Количество:
+                <input
+                    type="number"
+                    value={quantity}
+                    onChange={(e) => setQuantity(e.target.value)}
+                    className={styles.input}
+                />
+            </label>
+
+            <div className={styles.buttonGroup}>
+                <button onClick={handleSelect} className={classNames(styles.addButton, styles.button)}>Добавить</button>
+                <button onClick={() => dispatch(closeModal())} className={classNames(styles.cancelButton, styles.button)}>Сбросить</button>
+            </div>
         </div>
     );
 };

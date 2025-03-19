@@ -1,22 +1,30 @@
+.box_table{
+  height: 250px;
+  overflow-y: scroll;
+}
 .table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-}
 
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
 
-th {
-  background: #f4f4f4;
-}
+  th {
+    background: #f4f4f4;
+  }
 
-tr:hover {
-  background: #f1f1f1;
-  cursor: pointer;
+  tr {
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #f1f1f1;
+      cursor: pointer;
+    }
+  }
 }
 
 .positive {
@@ -25,4 +33,17 @@ tr:hover {
 
 .negative {
   color: red;
+}
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+@media (max-width: 600px) {
+  th, td {
+    font-size: 14px;
+    padding: 5px;
+  }
 }
