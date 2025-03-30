@@ -31,6 +31,6 @@ src/
 ├── components/   # React компоненты
 ├── services/     # Хук для подключения Websocket
 ├── store/        # Файлы хранилища redux
-├── store/        # Стили
+├── style/        # Стили
 ├── types/        # Типы assets 
 └── App.tsx   # Корневой компонент
